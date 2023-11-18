@@ -1,0 +1,14 @@
+Description: CD12352 - Infrastructure as Code Project - Network
+
+Parameters:
+  Param1:
+    Description: First params
+    Type: String
+    Default: Test
+
+Resources:
+  VPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 10.0.0.0/16
+      EnableDnsHostnames: true
