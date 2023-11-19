@@ -2,5 +2,9 @@
 	{
 		"ParameterKey": "DeployedBy",
 		"ParameterValue": "Lucky"
+	},
+	{
+		"ParameterKey": "BucketName",
+		"ParameterValue": "testbucketnamemustbeunique"
 	}
 ]

@@ -6,6 +6,9 @@ Parameters:
     Description: user who deploy this tempplate
     Type: String
     Default: Undefined
+  BucketName:
+    Description: The name of bucket. It's required
+    Type: String
 
 Resources:
   # Add your resources here
@@ -92,7 +95,7 @@ Resources:
               - 's3:GetObject*'
               - 's3:DeleteObject*'
               Resource:
-                - 'arn:aws:s3:::testbucketnamemustbeunique/*'
+                - !Sub "arn:aws:s3:::{BucketName}/*"
   
   WebServerInstanceProfile:
     Type: AWS::IAM::InstanceProfile

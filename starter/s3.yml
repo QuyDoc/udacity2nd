@@ -11,7 +11,7 @@ Parameters:
     Type: String
 
 Resources:
-  MyBucket:
+  LuckyBucket:
     Type: 'AWS::S3::Bucket'
     Properties:
       BucketName: !Ref Name
