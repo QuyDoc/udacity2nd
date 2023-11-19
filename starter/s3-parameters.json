@@ -1,0 +1,14 @@
+[
+	{
+		"ParameterKey": "DeployedBy",
+		"ParameterValue": "Lucky"
+	},
+	{
+		"ParameterKey": "Name",
+		"ParameterValue": "testbucketnamemustbeunique"
+	},
+	{
+		"ParameterKey": "AccessControl",
+		"ParameterValue": "Private"
+	}
+]

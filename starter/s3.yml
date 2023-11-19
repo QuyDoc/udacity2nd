@@ -1,0 +1,33 @@
+Parameters:
+  DeployedBy:
+    Description: user who deploy this tempplate
+    Type: String
+    Default: Undefined
+  Name:
+    Description: The name of bucket. It's required
+    Type: String
+  AccessControl: 
+    Description: The access control to the bucket. It's required
+    Type: String
+
+Resources:
+  MyBucket:
+    Type: 'AWS::S3::Bucket'
+    Properties:
+      BucketName: !Ref Name
+      AccessControl: !Ref AccessControl
+      VersioningConfiguration:
+        Status: Enabled
+      LifecycleConfiguration:
+        Rules:
+          - Status: Enabled
+            NoncurrentVersionExpirationInDays: 10
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        IgnorePublicAcls: true
+        BlockPublicPolicy: true
+        RestrictPublicBuckets: true
