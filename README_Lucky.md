@@ -1,5 +1,4 @@
-# udacity2nd
-2nd project
+# udacity2nd high-availability web app using CloudFormation
 
 Infrastructure Diagram: ![](Udacity_2nd.drawio.png)
 
@@ -10,18 +9,34 @@ Welcome page:
 ![](WelcomeToNGinx.png)
 
 
-## script to create s3 bucket, 
-`sh starter\createS3.sh s3`
+## script to create s3 bucket 
+```
+sh starter\createS3.sh s3
+```
 
 * Notice: Remember to change bucketname in file `starter\s3-parameters.json` each time running, cause the bucket name must be unique
 
 ## script to create/update network
-`sh starter\createNetwork.sh`
-`sh starter\updateNetwork.sh`
+
+```
+sh starter\createNetwork.sh
+```
+```
+sh starter\updateNetwork.sh
+```
 
 ## script to create/update application
-`sh starter\createApp.sh`
-`sh starter\updateApp.sh`
+```
+sh starter\createApp.sh
+```
+```
+sh starter\updateApp.sh
+```
+
+## script to delete stack and resources
+```
+sh starter\deleteStack.sh <stack-name>
+```
 
 * Notice: must update `BucketName` in parameter file `starter\udagram-parameters.json`, make sure bucket is existing.
 
@@ -46,3 +61,7 @@ Welcome page:
 * Security Groups:
 
 ![](SecurityGroups.png)
+
+* Stack's outputs:
+
+![](StackOutput.png)
