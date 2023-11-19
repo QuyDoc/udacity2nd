@@ -5,7 +5,7 @@
 	},
 	{
 		"ParameterKey": "Name",
-		"ParameterValue": "testbucketnamemustbeunique"
+		"ParameterValue": "testbucketnamemustbeunique2"
 	},
 	{
 		"ParameterKey": "AccessControl",

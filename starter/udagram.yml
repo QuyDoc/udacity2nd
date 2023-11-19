@@ -56,14 +56,15 @@ Resources:
         UserData:
           Fn::Base64: |
             #!/bin/bash
-            echo "Hello, I'm a server ready to work!"
-            apt-get update -y
+            sudo apt-get update -y
             sudo apt-get install nginx -y
+            sudo echo "It works! Udagram, Udacity" > /usr/share/nginx/html/index.html
             service nginx start
+            sudo echo "It works! Udagram, Udacity" > /usr/share/nginx/html/index.html
         ImageId: ami-040b9e45b2fe01abd
         SecurityGroupIds:
           - !Ref WebserverSecurityGroup
-        InstanceType: t2.micro
+        InstanceType: t3.small
         IamInstanceProfile:
           Name: !Ref WebServerInstanceProfile
         BlockDeviceMappings:
@@ -162,3 +163,13 @@ Resources:
       UnhealthyThresholdCount: 5
       VpcId: 
         Fn::ImportValue: VPCID
+
+Outputs:
+  WebAppLB:
+    Description: DNS Name of webapp
+    Value: 
+      Fn::Sub:
+        - "http://${dnsname}"
+        - {dnsname: !GetAtt WebAppLB.DNSName}
+    Export:
+      Name: WebAppLB

@@ -65,3 +65,6 @@ sh starter\deleteStack.sh <stack-name>
 * Stack's outputs:
 
 ![](StackOutput.png)
+
+### Reply comment:
+Why do you define the t2.micro instance type rather than t3.small or better? --> Just want to use minimum as possible. Updated to t3.small.
