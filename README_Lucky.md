@@ -2,7 +2,7 @@
 
 Infrastructure Diagram: ![](Udacity_2nd.drawio.png)
 
-Outputs: http://udacit-webap-bkqmbbt8r6jn-1434926836.us-east-1.elb.amazonaws.com/
+Outputs: http://udacit-webap-9ykzblhy49aq-181266303.us-east-1.elb.amazonaws.com/
 
 Welcome page:
 
@@ -63,6 +63,8 @@ sh starter\deleteStack.sh <stack-name>
 ![](SecurityGroups.png)
 
 * Stack's outputs:
+
+DNSName: ![](WebappLBOutputs.png)
 
 ![](StackOutput.png)
 
