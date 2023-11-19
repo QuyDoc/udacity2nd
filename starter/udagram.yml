@@ -58,9 +58,23 @@ Resources:
             #!/bin/bash
             sudo apt-get update -y
             sudo apt-get install nginx -y
-            sudo echo "It works! Udagram, Udacity" > /usr/share/nginx/html/index.html
             service nginx start
-            sudo echo "It works! Udagram, Udacity" > /usr/share/nginx/html/index.html
+            sudo su
+            cd /etc/nginx/sites-enabled
+            unlink default
+            cd /etc/nginx/conf.d
+            printf "some data for the file\nAnd a new line" >> fileName
+            printf "server {\n" > test.conf
+            printf "        listen 80 default_server;\n" >> test.conf
+            printf "        index index.html;\n" >> test.conf
+            printf "        server_name test;\n" >> test.conf
+            printf "        root /var/www/test;\n" >> test.conf
+            printf "}" >> test.conf
+            cd /var/www
+            mkdir test
+            cd test
+            printf "This is the 2nd Udacity Project. Running on NGInx server." >> index.html
+
         ImageId: ami-040b9e45b2fe01abd
         SecurityGroupIds:
           - !Ref WebserverSecurityGroup
