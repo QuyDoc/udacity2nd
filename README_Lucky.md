@@ -2,16 +2,15 @@
 
 Infrastructure Diagram: ![](Udacity_2nd.drawio.png)
 
-Outputs: http://udacit-webap-9ykzblhy49aq-181266303.us-east-1.elb.amazonaws.com/
+Outputs: http://udacit-webap-c8aqwyznqcti-310829631.us-east-1.elb.amazonaws.com/
 
-Welcome page:
+Home page:
 
-![](WelcomeToNGinx.png)
-
+![](NGInx_Homepage.png)
 
 ## script to create s3 bucket 
 ```
-sh starter\createS3.sh s3
+sh starter\createS3.sh <s3-stackname-unique>
 ```
 
 * Notice: Remember to change bucketname in file `starter\s3-parameters.json` each time running, cause the bucket name must be unique
@@ -19,18 +18,12 @@ sh starter\createS3.sh s3
 ## script to create/update network
 
 ```
-sh starter\createNetwork.sh
-```
-```
-sh starter\updateNetwork.sh
+sh starter\createUpdateNetwork.sh
 ```
 
 ## script to create/update application
 ```
-sh starter\createApp.sh
-```
-```
-sh starter\updateApp.sh
+sh starter\createUpdateApp.sh
 ```
 
 ## script to delete stack and resources
